@@ -10,13 +10,13 @@ const WeatherDisc = document.querySelector('.weather_disc')
 
 function Weather(){
 
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${Lselector.value}&units=metric&appid=`+APIKey;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${Lselector.value}&units=metric&appid=`+APIKey;
 
     fetch(url).then(function(response) {
         return response.json();
     }).then(function(obj){
         console.log(obj);
-        const Icon = `http://openweathermap.org/img/wn/${obj.weather[0].icon}@2x.png`;
+        const Icon = `https://openweathermap.org/img/wn/${obj.weather[0].icon}@2x.png`;
 
         WeatherDisc.textContent = obj.weather[0].description
         ActualLabel.textContent = "Temperature: "+Math.floor(obj.main.temp)+'°';
