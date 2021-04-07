@@ -22,7 +22,7 @@ function Weather(){
         ActualLabel.textContent = "Temperature: "+Math.floor(obj.main.temp)+'°';
         FeelsLikeLabel.textContent = "Feels Like: "+Math.floor(obj.main.feels_like)+'°';
         WeatherImage.src = Icon
-
+        WeatherImage.alt = obj.weather[0].main
     }).catch(function(error){
         console.error(error);
     })
